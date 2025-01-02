@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: "Work Sans", sans-serif;
+            padding: 20px;
+            background: #180835;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-bottom: 73px;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #161b22;
+            position: fixed;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .header-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+        }
+
+        .header-menu ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .header-menu ul li a:hover {
+            color: #00aaff;
+        }
+
+        /* Parent Container for All Sections */
+        .referral-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+            gap: 30px;
+            width: 100%;
+        }
+
+        /* Individual Section Styling */
+        .section {
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .referral-program {
+            background: #f64f59;
+            background: -webkit-linear-gradient(to right, #f64f59, #c471ed);
+            background: linear-gradient(to right, #f64f59, #c471ed);
+        }
+
+        .how-it-works {
+            background: #12c2e9;
+            background: -webkit-linear-gradient(to right, #12c2e9, #f64f59);
+            background: linear-gradient(to right, #12c2e9, #f64f59);
+        }
+
+        .referral-details {
+            background: #c471ed;
+            background: -webkit-linear-gradient(to right, #c471ed, #12c2e9);
+            background: linear-gradient(to right, #c471ed, #12c2e9);
+        }
+
+        .section h2 {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 400; /* Reduced boldness */
+        }
+
+        /* Title Colors */
+        .referral-program h2 {
+            color: #ffecb3; /* Light yellow */
+        }
+
+        .how-it-works h2 {
+            color: #f7ff00; /* Bright yellow */
+        }
+
+        .referral-details h2 {
+            color: #d9f7ff; /* Light cyan */
+        }
+
+        .section p, .section td {
+            font-size: 18px;
+            color: aliceblue;
+        }
+
+        /* Button Styling */
+        .profile-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #ff6b6b, #ff6347);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 60%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-button:hover {
+            background: linear-gradient(45deg, #ff6347, #ff6b6b);
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-button:active {
+            transform: scale(0.9);
+        }
+
+        /* Table Styling */
+        .referral-details table {
+            width: 100%;
+            margin: 0 auto;
+            color: white;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .referral-details td {
+            padding: 10px;
+        }
+
+        .referral-details td:first-child {
+            font-weight: bold;
+        }
+
+        /* Copy Button Container */
+        .copy-btn-container {
+            margin-top: 20px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media only screen and (max-width: 860px) {
+            .referral-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .section {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .profile-button {
+                width: 80%;
+                font-size: 16px;
+            }
+
+            .header-menu ul li a {
+                font-size: 14px; /* Adjust font size for bottom menu */
+            }
+        }
+        @media(max-width: 480px){
+            .header ul li a{
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-menu">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="task.html"><i class="fa-solid fa-list-check"></i> Task</a></li>
+                    <li><a href="vip.html"><i class="fa-solid fa-chess-queen"></i> Premium</a></li>
+                    <li><a href="team.html"><i class="fa-solid fa-user-plus"></i> Team</a></li>
+                    <li><a href="profile.html"><i class="fa-solid fa-wallet"></i> Wallet</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Parent Container for All Sections -->
+    <div class="referral-container">
+
+        <!-- Referral Program Section -->
+        <div class="section referral-program">
+            <h2>Referral Program</h2>
+            <p>Earn a 10% commission when your friends join us and complete a transaction! Share your code and start earning now.</p>
+        </div>
+
+        <!-- Referral Details Section -->
+        <div class="section referral-details">
+            <h2>Your Referral Details</h2>
+            <table>
+                <tr>
+                    <td>Your Referral Code:</td>
+                    <td><span id="referralCode">XYZ123ABC</span></td>
+                </tr>
+                <tr>
+                    <td>Commission:</td>
+                    <td>10% per successful referral</td>
+                </tr>
+                <tr>
+                    <td>Referral Link:</td>
+                    <td><a href="http://yourwebsite.com/referral?code=XYZ123ABC" target="_blank">Click here to refer</a></td>
+                </tr>
+            </table>
+
+            <div class="copy-btn-container">
+                <button class="profile-button" onclick="copyReferralCode()">Copy Referral Code</button>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="section how-it-works">
+            <h2>How It Works</h2>
+            <p>1. Share your referral code with your friends.</p>
+            <p>2. When they sign up and make their first purchase, you earn a 10% commission.</p>
+            <p>3. The more you refer, the more you earn!</p>
+        </div>
+
+    </div>
+
+    <script>
+        function copyReferralCode() {
+            const referralCode = document.getElementById('referralCode').innerText;
+            navigator.clipboard.writeText(referralCode).then(() => {
+                alert('Referral code copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

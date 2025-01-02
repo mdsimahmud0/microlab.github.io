@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+      <link rel="stylesheet" href="test.css">
+  </head>
+
+  <body>
+  
+    <div class="header">
+      <div class="container">
+        <div class="header-menu">
+          <ul>
+            <li><h2><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></h2></li>
+            <li><h2><a href="task.html"><i class="fa-solid fa-list-check"></i> Task</a></h2></li>
+            <li><h2><a href="vip.html"><i class="fa-solid fa-chess-queen"></i> VIP</a></h2></li>
+            <li><h2><a href="#"><i class="fa-solid fa-user-plus"></i> Team</a></h2></li>
+            <li><h2><a href="profile.html"><i class="fa-solid fa-wallet"></i> Wallet</a></h2></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner text-center">
+        <div class="welcome text-center">
+          <h2>Welcome</h2>
+          <h4>You are here to make money</h4>
+        </div>
+    </div>
+
+    <div class="Service">
+      <div class="container">
+          <div class="service-tittle">
+              <h1>Learn more about our application
+              </h1>
+              <p>Track time without wasting a second
+              </p>
+          </div>
+
+          <div class="service-items clear">
+
+              <div class="service-itm left">
+                  <span><i class="fa-solid fa-laptop"></i></span>
+                  <h3>Time Tracking</h3>
+                  <p>Accurate and simple time tracking. Task-based estimation</p>
+              </div>
+
+              <div class="service-itm left">
+                  <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  <h3>Resource Planning</h3>
+                  <p>Monitor team’s utilization across different projects</p>
+              </div>
+
+              <div class="service-itm left">
+                  <span><i class="fa-solid fa-book"></i></span>
+                  <h3>Integrations</h3>
+                  <p>Track time inside the most popular project management tools</p>
+              </div>
+              
+              <div class="service-itm left">
+                  <span><i class="fa-solid fa-laptop"></i></span>
+                  <h3>Task Management</h3>
+                  <p>Create tasks, track time and update progress in one place</p>
+              </div>
+
+              <div class="service-itm left">
+                  <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  <h3>Reporting</h3>
+                  <p>Highly flexible reports to analyze time the way you wan</p>
+              </div>
+
+              <div class="service-itm left">
+                  <span><i class="fa-solid fa-book"></i></span>
+                  <h3>Invoicing</h3>
+                  <p>Create invoices from time entries and send them to your clients</p>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+
+  <div class="team">
+    <div class="container">
+        <div class="team-tittle">
+            <h1>Our team is constantly trying for you</h1>
+        </div>
+
+        <div class="team-img clear">
+            <div class="face left">
+                <img src="./img/face1.jpg" alt="">
+                    <h3>Antoni</h3>
+                    <p>Owner</p>
+            </div>
+            <div class="face left">
+                <img src="./img/face2.jpg" alt="">
+                    <h3>Jason Doe</h3>
+                    <p>Programmer</p>
+            </div>
+            <div class="face left">
+                <img src="./img/face4.jpg" alt="">
+                    <h3>Jason Doe</h3>
+                    <p>Designer</p>
+            </div>
+            <div class="face left">
+                <img src="./img/face3.jpg" alt="">
+                    <h3>Jason Doe</h3>
+                    <p>Marketer</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Banner*/
+
+.banner{
+    background: url(./img/banner.webp) center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px;
+}
+.welcome{
+    display: inline-block;
+}
+.welcome h2{
+    font-size: 40px;
+    background-color: hsl(0, 0%, 87%, 0.5);
+    padding: 5px 38px;
+    border-radius: 16px 0;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.welcome h4{
+    font-size: 30px;
+    background-color: hsl(0, 0%, 0%, 0.5);
+    padding: 6px 25px;
+    color: hsl(0, 0%, 100%, 0.7);
+    border-radius: 5px;
+}
+.banner::after{
+    content: "";
+    background-color: black;
+}
+
+/*Service Tittle*/
+.service{
+    background-color: white;
+}
+
+.service-tittle{
+    text-align: center;
+}
+.service-tittle h1{
+    padding-top: 60px;
+    padding-bottom: 20px;
+    font-size: 40px;
+}
+.service-tittle p{
+    font-size: 20px;
+    color: gray;
+    padding-bottom: 40px;
+}
+
+/*Service Items*/ 
+
+.service-items{
+    padding-bottom: 460px;
+}
+
+.service-itm{
+width: 31.3%;
+margin: 1%;
+height: 200px;
+padding: 40px;
+box-sizing: border-box;
+border-radius: 2px;
+box-shadow: 0 0 15px hwb(230 91% 7%);
+
+}
+.service-itm:hover{
+    box-shadow: 0 0 30px hsl(231, 12%, 88%);
+
+}
+.service-itm span{
+    float: left;
+    height: 20px;
+    font-size: 30px;
+    padding: 0 30px 130px 0;
+    color: #6278DF;
+
+}
+.service-itm h3{
+    font-weight: 500;
+}
+.service-itm p{
+    color: gray;
+    margin-top: 20px;
+    line-height: 25px;
+}
+
+/*Team*/
+
+.team{
+    background: white;
+    padding-bottom: 485px;
+}
+.team-tittle{
+    text-align: center;
+}
+.team-tittle h1{
+    padding: 60px 0;
+    font-weight: 500;
+    font-size: 33px;
+}
+
+.face{
+    width: 23%;
+    margin-right: 2%;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px hwb(230 83% 12%);
+    transition: 0.3s;
+}
+.face:hover{
+    box-shadow: 0 0 20px hwb(226 65% 26%);
+}
+.face img{
+    width: 100%;
+}
+.face h3{
+    margin: 28px 0px 0px 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.face p{
+    margin: 6px 0px 23px 15px;
+    color: gray;
+}

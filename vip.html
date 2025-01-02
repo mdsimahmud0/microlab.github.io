@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #161b22;
+            position: fixed;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .header-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+        }
+
+        .header-menu ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .header-menu ul li a:hover {
+            color: #00aaff;
+        }
+
+        /* subscription */
+        .subscription {
+            background: linear-gradient(45deg, #161b22, #1b2027);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .subscription-title h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .subscription-title p {
+            font-size: 1.2rem;
+            color: #f2f2f2;
+            margin-bottom: 40px;
+        }
+
+        .subscription-items {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .subscription-box {
+            background: #fff;
+            color: #333;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .subscription-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .s-item {
+            padding: 30px;
+            background: linear-gradient(45deg, #040406, #49474dd9);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .s-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .s-item h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .s-item h2 {
+            font-size: 1rem;
+        }
+
+        .s-item h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+
+        .s-item p {
+            font-size: 1rem;
+            color: #eee;
+        }
+
+        .s-item2 {
+            padding: 30px;
+            background: #f9f9f9;
+        }
+
+        .s-item2 ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .s-item2 ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .s-item2 ul li i {
+            color: #6278df;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .s-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .s-button a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #6278df;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .s-button a:hover {
+            background: #9453f7;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .subscription-title h1 {
+                font-size: 2.5rem;
+            }
+
+            .subscription-title p {
+                font-size: 1rem;
+            }
+
+            .subscription-box {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .subscription-title h1 {
+                font-size: 2rem;
+            }
+
+            .subscription-title p {
+                font-size: 0.9rem;
+            }
+
+            .s-item h1 {
+                font-size: 2.5rem;
+            }
+            .header ul li a{
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-menu">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="task.html"><i class="fa-solid fa-list-check"></i> Task</a></li>
+                    <li><a href="vip.html"><i class="fa-solid fa-chess-queen"></i> Premium</a></li>
+                    <li><a href="team.html"><i class="fa-solid fa-user-plus"></i> Team</a></li>
+                    <li><a href="profile.html"><i class="fa-solid fa-wallet"></i> Wallet</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="subscription">
+        <div class="subscription-title">
+            <h1>Start Using Our App Today</h1>
+            <p>Set of tools to seamlessly manage projects during their entire life cycle</p>
+        </div>
+
+        <div class="subscription-items">
+            <!-- Free Plan -->
+            <div class="subscription-box">
+                <div class="s-item">
+                    <h4>Free Version</h4>
+                    <h1>$0 <h2>/ month</h2>
+                    </h1>
+                    <h3>Who is this for?</h3>
+                    <p>Free version for students and regular users</p>
+                </div>
+                <div class="s-item2">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Time Tracking</li>
+                        <li><i class="fa-solid fa-check"></i> Resource Planning</li>
+                        <li><i class="fa-solid fa-xmark"></i> Integrations</li>
+                        <li><i class="fa-solid fa-xmark"></i> Task Management</li>
+                        <li><i class="fa-solid fa-xmark"></i> Reporting</li>
+                        <li><i class="fa-solid fa-xmark"></i> Invoicing</li>
+                    </ul>
+                    <div class="s-button">
+                        <a href="#">Get Free Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Plan -->
+            <div class="subscription-box">
+                <div class="s-item">
+                    <h4>Basic</h4>
+                    <h1>$10 <h2>/ month</h2>
+                    </h1>
+                    <h3>Who is this for?</h3>
+                    <p>The version for business people having a tight schedule</p>
+                </div>
+                <div class="s-item2">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Time Tracking</li>
+                        <li><i class="fa-solid fa-check"></i> Resource Planning</li>
+                        <li><i class="fa-solid fa-check"></i> Integrations</li>
+                        <li><i class="fa-solid fa-check"></i> Task Management</li>
+                        <li><i class="fa-solid fa-xmark"></i> Reporting</li>
+                        <li><i class="fa-solid fa-xmark"></i> Invoicing</li>
+                    </ul>
+                    <div class="s-button">
+                        <a href="#">Get Access Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="subscription-box">
+                <div class="s-item">
+                    <h4>Standard</h4>
+                    <h1>$15 <h2>/ month</h2>
+                    </h1>
+                    <h3>Who is this for?</h3>
+                    <p>Maximum version for large companies</p>
+                </div>
+                <div class="s-item2">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Time Tracking</li>
+                        <li><i class="fa-solid fa-check"></i> Resource Planning</li>
+                        <li><i class="fa-solid fa-check"></i> Integrations</li>
+                        <li><i class="fa-solid fa-check"></i> Task Management</li>
+                        <li><i class="fa-solid fa-check"></i> Reporting</li>
+                        <li><i class="fa-solid fa-check"></i> Invoicing</li>
+                    </ul>
+                    <div class="s-button">
+                        <a href="#">Get Access Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="subscription-box">
+                <div class="s-item">
+                    <h4>Premium</h4>
+                    <h1>$15 <h2>/ month</h2>
+                    </h1>
+                    <h3>Who is this for?</h3>
+                    <p>Maximum version for large companies</p>
+                </div>
+                <div class="s-item2">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Time Tracking</li>
+                        <li><i class="fa-solid fa-check"></i> Resource Planning</li>
+                        <li><i class="fa-solid fa-check"></i> Integrations</li>
+                        <li><i class="fa-solid fa-check"></i> Task Management</li>
+                        <li><i class="fa-solid fa-check"></i> Reporting</li>
+                        <li><i class="fa-solid fa-check"></i> Invoicing</li>
+                    </ul>
+                    <div class="s-button">
+                        <a href="#">Get Access Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="subscription-box">
+                <div class="s-item">
+                    <h4>Elite</h4>
+                    <h1>$15 <h2>/ month</h2>
+                    </h1>
+                    <h3>Who is this for?</h3>
+                    <p>Maximum version for large companies</p>
+                </div>
+                <div class="s-item2">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Time Tracking</li>
+                        <li><i class="fa-solid fa-check"></i> Resource Planning</li>
+                        <li><i class="fa-solid fa-check"></i> Integrations</li>
+                        <li><i class="fa-solid fa-check"></i> Task Management</li>
+                        <li><i class="fa-solid fa-check"></i> Reporting</li>
+                        <li><i class="fa-solid fa-check"></i> Invoicing</li>
+                    </ul>
+                    <div class="s-button">
+                        <a href="#">Get Access Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="subscription-box">
+                <div class="s-item">
+                    <h4>Royal</h4>
+                    <h1>$15 <h2>/ month</h2>
+                    </h1>
+                    <h3>Who is this for?</h3>
+                    <p>Maximum version for large companies</p>
+                </div>
+                <div class="s-item2">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Time Tracking</li>
+                        <li><i class="fa-solid fa-check"></i> Resource Planning</li>
+                        <li><i class="fa-solid fa-check"></i> Integrations</li>
+                        <li><i class="fa-solid fa-check"></i> Task Management</li>
+                        <li><i class="fa-solid fa-check"></i> Reporting</li>
+                        <li><i class="fa-solid fa-check"></i> Invoicing</li>
+                    </ul>
+                    <div class="s-button">
+                        <a href="#">Get Access Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

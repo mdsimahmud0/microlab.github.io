@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History Page</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Work Sans", sans-serif;
+      background-color: #180835;
+      margin: 0;
+      padding: 0;
+      color: #f0f0f0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #1e1e2f;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      position: relative;
+      padding-top: 120px;
+    }
+
+    .tittle-top {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 100%;
+    }
+
+    .tittle-top h1 {
+      font-weight: 600;
+      color: #C471ED;
+      font-size: 36px;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      font-weight: 600;
+      background: #333;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .back-button a:hover {
+      background: #444;
+      text-decoration: none;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tabs button {
+      flex: 1;
+      padding: 15px 0;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .tabs button.active {
+      background-color: #c471ed;
+      color: #ffffff;
+    }
+
+    .tabs button:not(.active) {
+      background-color: #2a2a40;
+      color: #c471ed;
+    }
+
+    .tabs button:hover:not(.active) {
+      background-color: #333344;
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+
+    .history-table th,
+    .history-table td {
+      padding: 12px;
+      border: 1px solid #333;
+      text-align: left;
+      font-size: 20px; /* Default font size for small screens */
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+
+    .history-table th {
+      background-color: #43434f;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .history-table td {
+      color: #f0f0f0;
+    }
+
+    .history-table .completed {
+      color: #1ddba9;
+    }
+
+    .history-table .pending {
+      color: #ebc100;
+    }
+
+    .history-table .failed {
+      color: #ff320c;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 1399px) {
+      .history-table th,
+      .history-table td {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .history-table th,
+      .history-table td {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .history-table th,
+      .history-table td {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .history-table th,
+      .history-table td {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .history-table th,
+      .history-table td {
+        font-size: 8px;
+      }
+      .tittle-top h1{
+        font-size: 27px;
+        padding-top: 21px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .history-table th,
+      .history-table td {
+        font-size: 7px;
+      }
+      .tittle-top h1{
+        font-size: 23px;
+        padding-top: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Title -->
+    <div class="tittle-top">
+      <h1>Transaction History</h1>
+    </div>
+    <!-- Back button -->
+    <div class="back-button">
+      <a href="#" onclick="history.back()">← Back</a>
+    </div>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button id="deposit-tab" class="active" onclick="showHistory('deposit')">Deposit</button>
+      <button id="withdraw-tab" onclick="showHistory('withdraw')">Withdraw</button>
+    </div>
+
+    <!-- History Table -->
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Wallet</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="history-content">
+        <!-- Dynamic Content -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const depositHistory = [
+      { wallet: '0x12ccf166ea8c3cdb7659d824c30ef9b101a90ede', amount: '50$', status: 'completed' },
+      { wallet: '01309364799', amount: '1200৳', status: 'pending' },
+    ];
+
+    const withdrawHistory = [
+      { wallet: '0x12ccf166ea8c3cdb7659d824c30ef9b101a90ede', amount: '1021$', status: 'failed' },
+    ];
+
+    function showHistory(type) {
+      const historyContent = document.getElementById('history-content');
+      const depositTab = document.getElementById('deposit-tab');
+      const withdrawTab = document.getElementById('withdraw-tab');
+      historyContent.innerHTML = '';
+
+      if (type === 'deposit') {
+        depositTab.classList.add('active');
+        withdrawTab.classList.remove('active');
+        depositHistory.forEach(entry => {
+          const statusClass = entry.status === 'completed' ? 'completed' : entry.status === 'pending' ? 'pending' : 'failed';
+          historyContent.innerHTML += `
+            <tr>
+              <td>${entry.wallet}</td>
+              <td>${entry.amount}</td>
+              <td class="${statusClass}">${entry.status}</td>
+            </tr>
+          `;
+        });
+      } else {
+        withdrawTab.classList.add('active');
+        depositTab.classList.remove('active');
+        withdrawHistory.forEach(entry => {
+          const statusClass = entry.status === 'completed' ? 'completed' : entry.status === 'pending' ? 'pending' : 'failed';
+          historyContent.innerHTML += `
+            <tr>
+              <td>${entry.wallet}</td>
+              <td class="withdraw">- ${entry.amount}</td>
+              <td class="${statusClass}">${entry.status}</td>
+            </tr>
+          `;
+        });
+      }
+    }
+
+    // Load deposit history by default
+    showHistory('deposit');
+  </script>
+</body>
+</html>

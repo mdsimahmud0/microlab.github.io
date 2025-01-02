@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Home</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* General Styles */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Work Sans", sans-serif;
+        }
+
+        body {
+            background-color: #0d1117; /* Dark background like profile page */
+            color: #ffffff; /* Light text for contrast */
+            line-height: 1.6;
+        }
+
+        /* Banner Section */
+        .banner {
+            text-align: center;
+            padding: 200px 20px;
+            background-color: #1b2027;
+            background: url(./img/banner.webp) center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .banner h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .banner h4 {
+            font-size: 20px;
+            color: #aaaaaa;
+        }
+
+        /* Service Section */
+        .service {
+            background-color: #161b22;
+            padding: 60px 20px;
+        }
+
+        .service-title h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .service-title p {
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 40px;
+        }
+
+        .service-items {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background-color: #1f2a34;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            width: 20%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-item span {
+            font-size: 36px;
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+
+        .service-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 60px 20px;
+        }
+
+        .team-title h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .team-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            background-color: #1f2a34;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-member h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* Header Section (Bottom Menu) */
+        .header {
+            background-color: #161b22;
+            position: fixed;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+            padding: 15px 0;
+        }
+
+        .header-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-menu ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 21px;
+            transition: color 0.3s ease;
+        }
+
+        .header-menu ul li a:hover {
+            color: #00aaff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-item {
+                width: 45%;
+            }
+
+            .team-member {
+                width: 45%;
+            }
+
+            .header-menu ul li a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-item, .team-member {
+                width: 100%;
+            }
+            .banner{
+                height: 100px;
+            }
+
+            .banner h2 {
+                font-size: 32px;
+            }
+
+            .banner h4 {
+                font-size: 19px;
+            }
+
+            .header-menu ul li a {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner Section -->
+    <div class="banner text-center">
+        <div class="welcome">
+            <h2>Welcome</h2>
+            <h4>You are here to achieve greatness</h4>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="service">
+        <div class="container">
+            <div class="service-title">
+                <h1>Learn More About Our Services</h1>
+                <p>Track your time and tasks efficiently</p>
+            </div>
+            <div class="service-items">
+                <div class="service-item">
+                    <span><i class="fa-solid fa-laptop"></i></span>
+                    <h3>Time Tracking</h3>
+                    <p>Accurate and simple time tracking for your tasks.</p>
+                </div>
+                <div class="service-item">
+                    <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    <h3>Resource Planning</h3>
+                    <p>Monitor utilization across different projects.</p>
+                </div>
+                <div class="service-item">
+                    <span><i class="fa-solid fa-book"></i></span>
+                    <h3>Integrations</h3>
+                    <p>Use the tools you already love with seamless integration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team">
+        <div class="container">
+            <div class="team-title">
+                <h1>Our Amazing Team</h1>
+            </div>
+            <div class="team-images">
+                <div class="team-member">
+                    <img src="./img/face1.jpg" alt="Antoni">
+                    <h3>Antoni</h3>
+                    <p>Owner</p>
+                </div>
+                <div class="team-member">
+                    <img src="./img/face2.jpg" alt="Jason">
+                    <h3>Jason Doe</h3>
+                    <p>Programmer</p>
+                </div>
+                <div class="team-member">
+                    <img src="./img/face4.jpg" alt="John">
+                    <h3>John Doe</h3>
+                    <p>Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="./img/face3.jpg" alt="John">
+                    <h3>John Doe</h3>
+                    <p>Marketer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="header">
+        <div class="header-menu">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="task.html"><i class="fa-solid fa-list-check"></i> Task</a></li>
+                <li><a href="vip.html"><i class="fa-solid fa-chess-queen"></i> Premium</a></li>
+                <li><a href="team.html"><i class="fa-solid fa-user-plus"></i> Team</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-wallet"></i> Wallet</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Page</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            font-family: "Work Sans", sans-serif;
+            background-color: #180835; /* Dark background */
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background: #1e1e2f; /* Dark card background */
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            width: 100%;
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            top: 17px;
+            left: 10px;
+        }
+        .back-button a {
+            text-decoration: none;
+            color: #f0f0f0;
+            font-size: 16px;
+            font-weight: 600;
+            background: #333;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .back-button a:hover {
+            background: #444;
+            text-decoration: none;
+        }
+        h1 {
+            text-align: center;
+            color: #c471ed; /* Purple gradient accent */
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .option {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .option select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #121223;
+            color: #f0f0f0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .details {
+            display: none;
+            margin-top: 20px;
+            background: #2a2a40; /* Darker card background */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            height: auto;
+            transition: all 0.3s ease;
+        }
+        .details.active {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #f0f0f0;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #121223;
+            color: #f0f0f0;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus, input[type="file"]:focus {
+            border-color: #c471ed; /* Purple accent */
+            outline: none;
+        }
+        button {
+            display: inline-block;
+            padding: 12px;
+            background: linear-gradient(45deg, #c471ed, #12c2e9); /* Purple to cyan gradient */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #12c2e9, #c471ed); /* Cyan to purple gradient */
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        p {
+            margin: 10px 0;
+            color: #f0f0f0;
+            font-size: 16px;
+        }
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .copy-btn {
+            padding: 5px 10px;
+            background: #444;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-block;
+            margin-left: 10px; 
+        }
+        .copy-btn:hover {
+            background: #555;
+        }
+        /* Add this to the existing CSS */
+        #crypto-details span {
+            word-wrap: break-word; /* Allows the text to break into the next line if it's too long */
+            word-break: break-word; /* Ensures that long words break at a reasonable place */
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            .container{
+                width: 80%;
+            }
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+            input[type="text"], input[type="file"] {
+                font-size: 14px;
+            }
+            label {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+                width: 80%;
+            }
+            .details p span{
+                position: absolute;
+                left: 43px;
+                top: 166px;
+            }
+            .details p strong{
+                position: relative;
+                top: -24px;
+                bottom: 0;
+            }
+            .copy-btn{
+                position: relative;
+                top: 4px;
+                left: -18px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .option select {
+                font-size: 14px;
+            }
+            button {
+                font-size: 12px;
+                padding: 8px;
+            }
+            input[type="text"], input[type="file"] {
+                font-size: 12px;
+                padding: 8px;
+            }
+            label {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-button">
+            <a href="#" onclick="history.back()">← Back</a>
+        </div>
+        <h1>Deposit</h1>
+        <div class="option">
+            <select id="payment-method">
+                <option value="" disabled selected>Choose Payment Method</option>
+                <option value="bkash">bKash</option>
+                <option value="crypto">Crypto</option>
+            </select>
+        </div>
+
+        <div id="bkash-details" class="details">
+            <p><strong>bKash Number:</strong> <span>01309364799</span><button class="copy-btn" onclick="copyToClipboard('01309364799')">Copy</button></p>
+            <form id="bkash-form">
+                <div class="form-group">
+                    <label for="bkash-screenshot">Upload Screenshot:</label>
+                    <input type="file" id="bkash-screenshot" name="bkash-screenshot" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="bkash-amount">Amount (BDT):</label>
+                    <input type="text" id="bkash-amount" name="bkash-amount" placeholder="Enter amount in BDT" required>
+                </div>
+                <div class="form-group">
+                    <label for="bkash-transaction-id">Transaction ID:</label>
+                    <input type="text" id="bkash-transaction-id" name="bkash-transaction-id" placeholder="Enter Transaction ID" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="crypto-details" class="details">
+            <p><strong>Network:</strong> Polygon</p>
+            <p><strong>Address:</strong> <span>0x12ccf166ea8c3cdb7659d824c30ef9b101a90ede</span> <button class="copy-btn" onclick="copyToClipboard('0x12ccf166ea8c3cdb7659d824c30ef9b101a90ede')">Copy</button></p>
+            <form id="crypto-form">
+                <div class="form-group">
+                    <label for="crypto-screenshot">Upload Screenshot:</label>
+                    <input type="file" id="crypto-screenshot" name="crypto-screenshot" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="crypto-amount">Amount (USDT):</label>
+                    <input type="text" id="crypto-amount" name="crypto-amount" placeholder="Enter amount in USDT" required>
+                </div>
+                <div class="form-group">
+                    <label for="crypto-transaction-hash">Transaction Hash:</label>
+                    <input type="text" id="crypto-transaction-hash" name="crypto-transaction-hash" placeholder="Enter Transaction Hash" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('payment-method').addEventListener('change', function () {
+            document.querySelectorAll('.details').forEach(detail => detail.classList.remove('active'));
+            const selected = this.value;
+            if (selected) {
+                document.getElementById(`${selected}-details`).classList.add('active');
+            }
+        });
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
