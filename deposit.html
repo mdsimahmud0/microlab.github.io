@@ -185,20 +185,25 @@
                 padding: 15px;
                 width: 80%;
             }
-            .details p span{
+            .details-b p span{
                 position: absolute;
                 left: 43px;
                 top: 166px;
             }
-            .details p strong{
+            .details-b p strong{
                 position: relative;
                 top: -24px;
                 bottom: 0;
             }
-            .copy-btn{
+            .copy-btn-b{
                 position: relative;
                 top: 4px;
                 left: -18px;
+            }
+            .copy-btn-c{
+                position: relative;
+                top: 3px;
+                left: -10px;
             }
             h1 {
                 font-size: 20px;
@@ -234,8 +239,8 @@
             </select>
         </div>
 
-        <div id="bkash-details" class="details">
-            <p><strong>bKash Number:</strong> <span>01309364799</span><button class="copy-btn" onclick="copyToClipboard('01309364799')">Copy</button></p>
+        <div id="bkash-details" class="details-b details">
+            <p><strong>bKash Number:</strong> <span>01309364799</span><button class="copy-btn copy-btn-b" onclick="copyToClipboard('01309364799')">Copy</button></p>
             <form id="bkash-form">
                 <div class="form-group">
                     <label for="bkash-screenshot">Upload Screenshot:</label>
@@ -255,7 +260,7 @@
 
         <div id="crypto-details" class="details">
             <p><strong>Network:</strong> Polygon</p>
-            <p><strong>Address:</strong> <span>0x12ccf166ea8c3cdb7659d824c30ef9b101a90ede</span> <button class="copy-btn" onclick="copyToClipboard('0x12ccf166ea8c3cdb7659d824c30ef9b101a90ede')">Copy</button></p>
+            <p><strong>Address:</strong> <span>0x12ccf166ea8c3cdb7659d824c30ef9b101a90ede</span> <button class="copy-btn copy-btn-c" onclick="copyToClipboard('0x12ccf166ea8c3cdb7659d824c30ef9b101a90ede')">Copy</button></p>
             <form id="crypto-form">
                 <div class="form-group">
                     <label for="crypto-screenshot">Upload Screenshot:</label>
